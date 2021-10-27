@@ -1,0 +1,24 @@
+V1.0
+功能：将jpeg图片转换成yuv图片，将yuv图片进行局部裁剪，并替换到自己造的黑色yuv背景上
+
+
+注意：
+	目前仅适用于linux平台，
+	替换测试jpeg图片需要修改main.c中main函数下的size
+	需要特定的420P格式的jpeg。
+
+
+1. 文件介绍：
+	libjpeg-turbo-2.0.4 	库文件，在自己的linux电脑上使用需要移植
+	libyuv-master.zip l		ibyuv的库，后续可以移植过来进行yuv的变换
+	main.c 					主函数
+	test.jpeg  				测试照片，不能随意网上找，需要特定的420P格式的jpeg
+
+2. libjpeg-turbo-2.0.4移植:
+	自行百度移植,参考 https://blog.csdn.net/qq_28525665/article/details/99869658
+
+3. 移植好了之后执行命令：
+		make clean
+		make
+		./a.out
+		就会出现裁剪之后yuv图片
